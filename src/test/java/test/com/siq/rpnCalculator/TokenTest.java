@@ -1,17 +1,17 @@
 package test.com.siq.rpnCalculator;
 
-import com.siq.rpnCalculator.RpnCalculator;
+import com.siq.rpnCalculator.Token;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 
-public class RpnCalculatorTest {
+public class TokenTest {
 
     @Test
     public void unneededAndNotDesired() {
-        RpnCalculator rpnCalculator = new RpnCalculator();
-        assertThat(rpnCalculator,is(notNullValue()));
+        Token token = new Token("");
+        assertThat(token,is(notNullValue()));
     }
 }
