@@ -5,13 +5,17 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNull.notNullValue;
 
 public class TokenStreamTest {
 
     @Test
-    public void unneededAndNotDesired() {
-        TokenStream tokenStream = new TokenStream("");
-        assertThat(tokenStream,is(notNullValue()));
+    public void helloWorldTest() {
+        TokenStream tokenStream = new TokenStream("   Hello World!  ");
+        assertThat(tokenStream.hasMoreTokens(), is(true));
+        tokenStream.getNextToken();
+        assertThat(tokenStream.hasMoreTokens(), is(true));
+        tokenStream.getNextToken();
+        assertThat(tokenStream.hasMoreTokens(), is(false));
     }
+
 }
